@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '127.0.0.1/tollanradio';
+$config['base_url']	= 'http://127.0.0.1/tollanradio';
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +69,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'spanish';
 
 /*
 |--------------------------------------------------------------------------
