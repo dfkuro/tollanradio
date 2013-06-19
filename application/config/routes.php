@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "tollanradio";
 $route['404_override'] = '';
+$route['^(|acerca_de_nosotros|programacion|contacto)(/:any)?$'] = "tollanradio/$0";
 
 
 /* End of file routes.php */

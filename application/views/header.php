@@ -8,11 +8,11 @@
   <meta name="author" content="">
 
   <!-- Le styles -->
-  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="<?=base_url('css/bootstrap.css')?>" rel="stylesheet">
   <style type="text/css">
     body { padding-top: 60px; padding-bottom: 40px; }
   </style>
-  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="<?=base_url('css/bootstrap-responsive.css')?>" rel="stylesheet">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -29,26 +29,44 @@
   <link rel="stylesheet" href="<?=base_url('css/bootstrap-responsive.min.css')?>" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?=base_url('css/bootstrap.min.css')?>" type="text/css" media="screen" />-->
   <link rel="stylesheet" href="<?=base_url('css/tollan.css')?>" type="text/css" media="screen" />
+  
+  <script src="<?=base_url('js/jquery-2.0.2.min.js')?>"></script>
+  <!--<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-transition.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-transition.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-alert.js')?>"></script>
+  <!--script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-alert.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-modal.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-modal.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-dropdown.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-dropdown.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-scrollspy.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-scrollspy.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-tab.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-tab.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-tooltip.js')?>"></script>
+  <!--script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-tooltip.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-popover.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-popover.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-button.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-button.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-collapse.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-collapse.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-carousel.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-carousel.js"></script>-->
+  <script src="<?=base_url('js/bootstrap-typeahead.js')?>"></script>
+  <!--<script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-typeahead.js"></script>-->
+  
+  <!-- fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
 
-  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-transition.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-alert.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-modal.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-dropdown.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-scrollspy.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-tab.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-tooltip.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-popover.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-button.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-collapse.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-carousel.js"></script>
-  <script type="text/javascript" src="https://rawgithub.com/twitter/bootstrap/master/js/bootstrap-typeahead.js"></script>
-
+  <script src="<?=base_url('js/tollanradio.js')?>"></script>
 </head>
 <body>
 <div  class="container">
-    <div id="myCarousel" class="carousel slide">
-    <?=$images?>
+
+  <div id="myCarousel" class="carousel slide">
+  <?=$images?>  
 
   <div class="navbar ">
     <div class="navbar-inner">
@@ -61,52 +79,22 @@
         <a class="brand" href="#">Project name</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <?php $active = ($this->router->fetch_class() == 'inicio' ) ? 'active' : 'nulo' ?>
+            <li class="<?=$inicio?>"><?=anchor(base_url(), "inicio")?></a></li>
+            <li><a href="#programacion">Programacion</a></li>
+            <li class="<?=$acerca?>"><?=anchor("acerca_de_nosotros", "Acerca de nosotros")?></li>
+            <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <!-- Main hero unit for a primary marketing message or call to action -->
-    <div class="hero-unit">
-      <h1>Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-    </div>
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="span4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
-      </div>
-      <div class="span4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
-      </div>
-      <div class="span4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
-      </div>
-    </div>
 
-      <hr>
 
-    <footer>
-      <p>&copy; Company 2012</p>
-    </footer>
-  </div> <!-- /container -->
 
-  <!-- Le javascript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
+    
 
-  <div>
-</body>
-</html>
+    
+
+  

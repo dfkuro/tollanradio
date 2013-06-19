@@ -1,3 +1,5 @@
+
+
 body{
 	padding-top: 10px;
 }
@@ -15,8 +17,9 @@ img{
 }
 
 .navbar-inner {
-
-
+  /*height: 70px;*/
+  font-family: 'Homenaje', sans-serif;
+  font-size: 2em;
   background-color: #2c2c2c;  /*fallback color, place your own */
 
   /* Gradients for modern browsers, replace as you see fit */
@@ -38,22 +41,60 @@ img{
 }
 
 .navbar .nav .active > a, .navbar .nav .active > a:hover {
+    /*margin-top: 15px;*/
     background-color: #1175C6;
 }
 
 .navbar .nav > li > a {
-    color: #A2A2F4;
+    /*margin-top: 15px;*/
+    color: #FFFFFF;
+    margin-left: 30px;
 }
 
 .navbar-fixed-top .brand {
+    /*margin-top: 15px;*/
     color: #634c08;
     color: #f4dc87;
 }
 
 .navbar .nav > li > a:hover {
+  /*margin-top: 15px;*/
 	color:white;
 }
 
 .navbar .nav .active > a, .navbar .nav .active > a:hover {
+    /*margin-top: 15px;*/
 	color:white;
 }
+
+.brand{
+  /*margin-top: 15px;*/
+  
+}
+
+  
+    
+  
+
+
+/* Large desktop */
+@media (min-width: 1200px) { 
+  .image_slide{
+    width: auto;
+    height: 350px;
+    max-height: 350px; 
+  }
+}
+ 
+/* Portrait tablet to landscape and desktop */
+/*@media (min-width: 768px) and (max-width: 979px) { 
+
+}*/
+ 
+/* Landscape phone to portrait tablet */
+/*@media (max-width: 767px) { 
+
+}*/
+ 
+/* Landscape phones and down */
+/*@media (max-width: 480px) { ... }*/

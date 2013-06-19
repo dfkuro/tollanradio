@@ -1,13 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class tollanradio extends CI_Controller {
+class Tollanradio extends CI_Controller {
 
 	function __construct() {
         parent::__construct();
    	}
 
 	public function index() {
-		$this->home();
+		$this->inicio();
 		
 	}
 
@@ -26,17 +26,41 @@ class tollanradio extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function home()
+	public function inicio()
 	{	
+
 
 		$this->load->helper('path');
 		$this->load->helper('directory');
 
+
+
 		$slider['images'] = $this->slider_images();
+		$slider['inicio'] = 'active';
+		$slider['acerca'] = '';
+		$slider['programacion'] = '';
+		$slider['contacto'] = '';
 
 		$this->load->view('header', $slider);
 		$this->load->view('content');
+		$this->load->view('footer');
 	}
+
+	public function acerca_de_nosotros(){
+		$this->load->helper('path');
+		$this->load->helper('directory');
+
+		$slider['images'] = $this->slider_images();
+		$slider['inicio'] = '';
+		$slider['acerca'] = 'active';
+		$slider['programacion'] = '';
+		$slider['contacto'] = '';
+
+		$this->load->view('header', $slider);
+		$this->load->view('acerca_de_nosotros');
+		$this->load->view('footer');	
+	}
+
 
 	public function slider_images()
 	{
@@ -76,12 +100,12 @@ class tollanradio extends CI_Controller {
 				
 				if($increment == 0){
 					$img .= '<div class="item active">
-					                    <img src='.$url_file.' alt=´'.$url_file.' />
+					                    <img class="image_slide" src='.$url_file.' alt=´'.$url_file.' />
 					                    
 					                  </div>';
 				}else{
 					$img .= '<div class="item">
-				                    <img src='.$url_file.' alt=´'.$url_file.' />
+				                    <img class="image_slide" src='.$url_file.' alt=´'.$url_file.' />
 				                  
 				                  </div>';
 				}
